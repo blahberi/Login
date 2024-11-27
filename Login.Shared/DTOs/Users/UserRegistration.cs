@@ -1,4 +1,6 @@
-﻿namespace Login.Shared.DTOs.Users
+﻿using Login.Shared.DTOs.Captcha;
+
+namespace Login.Shared.DTOs.Users
 {
 	public class UserRegistration
 	{
@@ -10,6 +12,6 @@
 		public string Country { get; set; }
 		public string City { get; set; }
 		public string Gender { get; set; }
-		public Guid VerificationToken { get; set; }
+		public VerificationCertificate VerificationCertificate { get; set; }
 	}
 }

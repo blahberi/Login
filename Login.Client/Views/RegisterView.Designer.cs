@@ -62,10 +62,10 @@ namespace Login.Client.Views
             PasswordText.Dock = DockStyle.Top;
             PasswordText.Font = new Font("Microsoft Sans Serif", 11F);
             PasswordText.ForeColor = Color.FromArgb(40, 40, 40);
-            PasswordText.Location = new Point(0, 68);
-            PasswordText.Margin = new Padding(4, 5, 4, 5);
+            PasswordText.Location = new Point(0, 58);
+            PasswordText.Margin = new Padding(4);
             PasswordText.Name = "PasswordText";
-            PasswordText.Size = new Size(400, 28);
+            PasswordText.Size = new Size(350, 24);
             PasswordText.TabIndex = 3;
             PasswordText.UseSystemPasswordChar = true;
             // 
@@ -75,10 +75,10 @@ namespace Login.Client.Views
             PasswordLabel.Dock = DockStyle.Top;
             PasswordLabel.Font = new Font("Microsoft Sans Serif", 10F);
             PasswordLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            PasswordLabel.Location = new Point(0, 48);
+            PasswordLabel.Location = new Point(0, 41);
             PasswordLabel.Margin = new Padding(4, 0, 4, 0);
             PasswordLabel.Name = "PasswordLabel";
-            PasswordLabel.Size = new Size(83, 20);
+            PasswordLabel.Size = new Size(69, 17);
             PasswordLabel.TabIndex = 2;
             PasswordLabel.Text = "Password";
             // 
@@ -89,10 +89,10 @@ namespace Login.Client.Views
             UserNameText.Dock = DockStyle.Top;
             UserNameText.Font = new Font("Microsoft Sans Serif", 11F);
             UserNameText.ForeColor = Color.FromArgb(40, 40, 40);
-            UserNameText.Location = new Point(0, 20);
-            UserNameText.Margin = new Padding(4, 5, 4, 5);
+            UserNameText.Location = new Point(0, 17);
+            UserNameText.Margin = new Padding(4);
             UserNameText.Name = "UserNameText";
-            UserNameText.Size = new Size(400, 28);
+            UserNameText.Size = new Size(350, 24);
             UserNameText.TabIndex = 1;
             // 
             // UserNameLabel
@@ -104,7 +104,7 @@ namespace Login.Client.Views
             UserNameLabel.Location = new Point(0, 0);
             UserNameLabel.Margin = new Padding(4, 0, 4, 0);
             UserNameLabel.Name = "UserNameLabel";
-            UserNameLabel.Size = new Size(86, 20);
+            UserNameLabel.Size = new Size(73, 17);
             UserNameLabel.TabIndex = 0;
             UserNameLabel.Text = "Username";
             // 
@@ -129,17 +129,18 @@ namespace Login.Client.Views
             panel1.Controls.Add(UserNameLabel);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 561);
+            panel1.Size = new Size(350, 462);
             panel1.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 411);
+            panel3.Location = new Point(0, 350);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(400, 150);
+            panel3.Size = new Size(350, 112);
             panel3.TabIndex = 5;
             panel3.Visible = false;
             // 
@@ -152,10 +153,10 @@ namespace Login.Client.Views
             GenderCombo.ForeColor = Color.FromArgb(40, 40, 40);
             GenderCombo.FormattingEnabled = true;
             GenderCombo.Items.AddRange(new object[] { "Male", "Female", "Chad", "Other" });
-            GenderCombo.Location = new Point(0, 356);
-            GenderCombo.Margin = new Padding(4, 5, 4, 5);
+            GenderCombo.Location = new Point(0, 304);
+            GenderCombo.Margin = new Padding(4);
             GenderCombo.Name = "GenderCombo";
-            GenderCombo.Size = new Size(400, 30);
+            GenderCombo.Size = new Size(350, 26);
             GenderCombo.TabIndex = 4;
             // 
             // GenderLabel
@@ -164,10 +165,10 @@ namespace Login.Client.Views
             GenderLabel.Dock = DockStyle.Top;
             GenderLabel.Font = new Font("Microsoft Sans Serif", 10F);
             GenderLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            GenderLabel.Location = new Point(0, 336);
+            GenderLabel.Location = new Point(0, 287);
             GenderLabel.Margin = new Padding(4, 0, 4, 0);
             GenderLabel.Name = "GenderLabel";
-            GenderLabel.Size = new Size(64, 20);
+            GenderLabel.Size = new Size(56, 17);
             GenderLabel.TabIndex = 14;
             GenderLabel.Text = "Gender";
             // 
@@ -178,10 +179,10 @@ namespace Login.Client.Views
             CityText.Dock = DockStyle.Top;
             CityText.Font = new Font("Microsoft Sans Serif", 11F);
             CityText.ForeColor = Color.FromArgb(40, 40, 40);
-            CityText.Location = new Point(0, 308);
-            CityText.Margin = new Padding(4, 5, 4, 5);
+            CityText.Location = new Point(0, 263);
+            CityText.Margin = new Padding(4);
             CityText.Name = "CityText";
-            CityText.Size = new Size(400, 28);
+            CityText.Size = new Size(350, 24);
             CityText.TabIndex = 13;
             // 
             // CityLabel
@@ -190,10 +191,10 @@ namespace Login.Client.Views
             CityLabel.Dock = DockStyle.Top;
             CityLabel.Font = new Font("Microsoft Sans Serif", 10F);
             CityLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            CityLabel.Location = new Point(0, 288);
+            CityLabel.Location = new Point(0, 246);
             CityLabel.Margin = new Padding(4, 0, 4, 0);
             CityLabel.Name = "CityLabel";
-            CityLabel.Size = new Size(38, 20);
+            CityLabel.Size = new Size(31, 17);
             CityLabel.TabIndex = 12;
             CityLabel.Text = "City";
             // 
@@ -204,10 +205,10 @@ namespace Login.Client.Views
             CountryText.Dock = DockStyle.Top;
             CountryText.Font = new Font("Microsoft Sans Serif", 11F);
             CountryText.ForeColor = Color.FromArgb(40, 40, 40);
-            CountryText.Location = new Point(0, 260);
-            CountryText.Margin = new Padding(4, 5, 4, 5);
+            CountryText.Location = new Point(0, 222);
+            CountryText.Margin = new Padding(4);
             CountryText.Name = "CountryText";
-            CountryText.Size = new Size(400, 28);
+            CountryText.Size = new Size(350, 24);
             CountryText.TabIndex = 11;
             // 
             // CountryLabel
@@ -216,10 +217,10 @@ namespace Login.Client.Views
             CountryLabel.Dock = DockStyle.Top;
             CountryLabel.Font = new Font("Microsoft Sans Serif", 10F);
             CountryLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            CountryLabel.Location = new Point(0, 240);
+            CountryLabel.Location = new Point(0, 205);
             CountryLabel.Margin = new Padding(4, 0, 4, 0);
             CountryLabel.Name = "CountryLabel";
-            CountryLabel.Size = new Size(67, 20);
+            CountryLabel.Size = new Size(57, 17);
             CountryLabel.TabIndex = 10;
             CountryLabel.Text = "Country";
             // 
@@ -230,10 +231,10 @@ namespace Login.Client.Views
             LastNameText.Dock = DockStyle.Top;
             LastNameText.Font = new Font("Microsoft Sans Serif", 11F);
             LastNameText.ForeColor = Color.FromArgb(40, 40, 40);
-            LastNameText.Location = new Point(0, 212);
-            LastNameText.Margin = new Padding(4, 5, 4, 5);
+            LastNameText.Location = new Point(0, 181);
+            LastNameText.Margin = new Padding(4);
             LastNameText.Name = "LastNameText";
-            LastNameText.Size = new Size(400, 28);
+            LastNameText.Size = new Size(350, 24);
             LastNameText.TabIndex = 9;
             // 
             // LastNameLabel
@@ -242,10 +243,10 @@ namespace Login.Client.Views
             LastNameLabel.Dock = DockStyle.Top;
             LastNameLabel.Font = new Font("Microsoft Sans Serif", 10F);
             LastNameLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            LastNameLabel.Location = new Point(0, 192);
+            LastNameLabel.Location = new Point(0, 164);
             LastNameLabel.Margin = new Padding(4, 0, 4, 0);
             LastNameLabel.Name = "LastNameLabel";
-            LastNameLabel.Size = new Size(91, 20);
+            LastNameLabel.Size = new Size(76, 17);
             LastNameLabel.TabIndex = 8;
             LastNameLabel.Text = "Last Name";
             // 
@@ -256,10 +257,10 @@ namespace Login.Client.Views
             FirstNameText.Dock = DockStyle.Top;
             FirstNameText.Font = new Font("Microsoft Sans Serif", 11F);
             FirstNameText.ForeColor = Color.FromArgb(40, 40, 40);
-            FirstNameText.Location = new Point(0, 164);
-            FirstNameText.Margin = new Padding(4, 5, 4, 5);
+            FirstNameText.Location = new Point(0, 140);
+            FirstNameText.Margin = new Padding(4);
             FirstNameText.Name = "FirstNameText";
-            FirstNameText.Size = new Size(400, 28);
+            FirstNameText.Size = new Size(350, 24);
             FirstNameText.TabIndex = 7;
             // 
             // FirstNameLabel
@@ -268,10 +269,10 @@ namespace Login.Client.Views
             FirstNameLabel.Dock = DockStyle.Top;
             FirstNameLabel.Font = new Font("Microsoft Sans Serif", 10F);
             FirstNameLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            FirstNameLabel.Location = new Point(0, 144);
+            FirstNameLabel.Location = new Point(0, 123);
             FirstNameLabel.Margin = new Padding(4, 0, 4, 0);
             FirstNameLabel.Name = "FirstNameLabel";
-            FirstNameLabel.Size = new Size(92, 20);
+            FirstNameLabel.Size = new Size(76, 17);
             FirstNameLabel.TabIndex = 6;
             FirstNameLabel.Text = "First Name";
             // 
@@ -282,10 +283,10 @@ namespace Login.Client.Views
             EmailText.Dock = DockStyle.Top;
             EmailText.Font = new Font("Microsoft Sans Serif", 11F);
             EmailText.ForeColor = Color.FromArgb(40, 40, 40);
-            EmailText.Location = new Point(0, 116);
-            EmailText.Margin = new Padding(4, 5, 4, 5);
+            EmailText.Location = new Point(0, 99);
+            EmailText.Margin = new Padding(4);
             EmailText.Name = "EmailText";
-            EmailText.Size = new Size(400, 28);
+            EmailText.Size = new Size(350, 24);
             EmailText.TabIndex = 5;
             // 
             // EmailLabel
@@ -294,10 +295,10 @@ namespace Login.Client.Views
             EmailLabel.Dock = DockStyle.Top;
             EmailLabel.Font = new Font("Microsoft Sans Serif", 10F);
             EmailLabel.ForeColor = Color.FromArgb(251, 241, 199);
-            EmailLabel.Location = new Point(0, 96);
+            EmailLabel.Location = new Point(0, 82);
             EmailLabel.Margin = new Padding(4, 0, 4, 0);
             EmailLabel.Name = "EmailLabel";
-            EmailLabel.Size = new Size(51, 20);
+            EmailLabel.Size = new Size(42, 17);
             EmailLabel.TabIndex = 4;
             EmailLabel.Text = "Email";
             // 
@@ -308,10 +309,10 @@ namespace Login.Client.Views
             RegisterButton.FlatStyle = FlatStyle.Flat;
             RegisterButton.Font = new Font("Microsoft Sans Serif", 12F);
             RegisterButton.ForeColor = Color.FromArgb(40, 40, 40);
-            RegisterButton.Location = new Point(0, 40);
-            RegisterButton.Margin = new Padding(4, 5, 4, 5);
+            RegisterButton.Location = new Point(0, 30);
+            RegisterButton.Margin = new Padding(4);
             RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(400, 69);
+            RegisterButton.Size = new Size(350, 52);
             RegisterButton.TabIndex = 2;
             RegisterButton.Text = "Register";
             RegisterButton.UseVisualStyleBackColor = true;
@@ -327,7 +328,7 @@ namespace Login.Client.Views
             LoginLink.Location = new Point(0, 0);
             LoginLink.Margin = new Padding(4, 0, 4, 0);
             LoginLink.Name = "LoginLink";
-            LoginLink.Size = new Size(204, 20);
+            LoginLink.Size = new Size(174, 17);
             LoginLink.TabIndex = 3;
             LoginLink.TabStop = true;
             LoginLink.Text = "I already have an account!";
@@ -338,21 +339,22 @@ namespace Login.Client.Views
             panel2.Controls.Add(LoginLink);
             panel2.Controls.Add(RegisterButton);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 566);
+            panel2.Location = new Point(0, 468);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(400, 109);
+            panel2.Size = new Size(350, 82);
             panel2.TabIndex = 4;
             // 
             // RegisterView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4);
             Name = "RegisterView";
-            Size = new Size(400, 675);
+            Size = new Size(350, 550);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

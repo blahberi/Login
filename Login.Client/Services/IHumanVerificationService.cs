@@ -4,6 +4,7 @@ namespace Login.Client.Services
 {
     public interface IHumanVerificationService
     {
-        Task<Captcha> GetCaptcha();
+        void AddVerificationCertificate(VerificationCertificate verificationCertificate);
+        bool TryGetVerificationCertificate(out VerificationCertificate? verificationCertificate);
     }
 }

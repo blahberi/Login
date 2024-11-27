@@ -16,7 +16,8 @@ namespace Login.Shared
 			string lastName,
 			string country,
 			string city,
-			string gender)
+			string gender,
+			VerificationCertificate verificationCertificate)
 		{
 			return connectionContext.RequestManager.SendUserRegistration(
 				userName,
@@ -26,7 +27,8 @@ namespace Login.Shared
 				lastName,
 				country,
 				city,
-				gender);
+				gender,
+				verificationCertificate);
 		}
 
 		public static Task<TransferableCaptcha> SendGetCaptchaRequest(
@@ -35,12 +37,12 @@ namespace Login.Shared
 			return connectionContext.RequestManager.SendGetCaptchaRequest();
 		}
 
-		public static Task<VerificationCertificate> SendAnswerCaptchaRequest(
+		public static Task<VerificationCertificate> SendCaptchaAnswerRequest(
 			this ConnectionContext connectionContext,
 			Guid guid,
 			string answer)
 		{
-			return connectionContext.RequestManager.SendAnswerCaptchaRequest(guid, asnwer);
+			return connectionContext.RequestManager.SendCaptchaAnswerRequest(guid, answer);
 		}
 
 		public static Task SendUserSignin(
@@ -67,7 +69,8 @@ namespace Login.Shared
 			string lastName,
 			string country,
 			string city,
-			string gender)
+			string gender,
+			VerificationCertificate verificationCertificate)
 		{
 			return requestManager.SendRequest(Paths.Users, Methods.Users.Register, new UserRegistration
 			{
@@ -78,7 +81,8 @@ namespace Login.Shared
 				LastName = lastName,
 				Country = country,
 				City = city,
-				Gender = gender
+				Gender = gender,
+				VerificationCertificate = verificationCertificate
 			});
 		}
 
@@ -88,7 +92,7 @@ namespace Login.Shared
 			return requestManager.SendRequest<TransferableCaptcha>(Paths.HumanVerification, Methods.Captcha.GetCaptcha);
 		}
 
-		public static Task<VerificationCertificate> SendAnswerCaptchaRequest(
+		public static Task<VerificationCertificate> SendCaptchaAnswerRequest(
 			this IRequestManager requestManager,
 			Guid guid,
 			string answer)

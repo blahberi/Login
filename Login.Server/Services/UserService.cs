@@ -47,7 +47,7 @@ namespace Login.Server.Services
 					return Result.FailureResult("Invalid user data");
 				}
 
-				if (!this.humanVerificationService.TryVerifying(userRegistration.VerificationToken))
+				if (!this.humanVerificationService.TryVerifying(userRegistration.VerificationCertificate))
 				{
 					return Result.FailureResult("Human verification failed");
 				}

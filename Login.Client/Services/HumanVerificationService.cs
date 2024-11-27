@@ -1,49 +1,27 @@
-﻿using Login.Shared;
-using Login.Shared.DTOs.Captcha;
-using Login.Shared.Framework;
+﻿using Login.Shared.DTOs.Captcha;
 
 namespace Login.Client.Services
 {
     internal class HumanVerificationService : IHumanVerificationService
     {
-        private readonly IProtocolSession session;
+        private readonly Queue<VerificationCertificate> verificationCertificateQueue = new Queue<VerificationCertificate>();
 
-        public HumanVerificationService(IProtocolSession session)
+        public void AddVerificationCertificate(VerificationCertificate verificationCertificate)
         {
-            this.session = session;
+            this.verificationCertificateQueue.Enqueue(verificationCertificate);
         }
 
-        public async Task<Captcha> GetCaptcha()
+        public bool TryGetVerificationCertificate(out VerificationCertificate? verificationCertificate)
         {
-			try
-			{
-                TransferableCaptcha transferableCaptcha = await this.session.RequestManager.SendGetCaptchaRequest();
-                return new Captcha()
-                {
-                    Guid = transferableCaptcha.Guid,
-                    Bitmap = Base64ToBitmap(transferableCaptcha.Base64Bitmap)
-                };
-            }
-            catch
-			{
-                return null;
-			}
-        }
-
-        public async Task<VerificationCertificate> AnswerCaptcha(Guid guid, string answer)
-        {
-            try
+            if (this.verificationCertificateQueue.Count > 0)
             {
-                VerificationCertificate verificationCertificate = await this.session.RequestManager.SendAnswerCaptchaReuqest(guid, answer);
+                verificationCertificate = this.verificationCertificateQueue.Dequeue();
+                return true;
             }
-        }
-
-        private Bitmap Base64ToBitmap(string base64string)
-        {
-            byte[] bytes = Convert.FromBase64String(base64string);
-            using (MemoryStream memoryStream = new MemoryStream(bytes))
+            else
             {
-                return new Bitmap(memoryStream);
+                verificationCertificate = null;
+                return false;
             }
         }
     }
