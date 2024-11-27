@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 461);
-            this.Name = "MainForm";
-            this.Text = "Dobble";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(979, 709);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "MainForm";
+            Text = "Dobble";
+            ResumeLayout(false);
         }
 
-		#endregion
-	}
+        #endregion
+    }
 }
 
