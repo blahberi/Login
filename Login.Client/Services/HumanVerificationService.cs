@@ -30,6 +30,14 @@ namespace Login.Client.Services
 			}
         }
 
+        public async Task<VerificationCertificate> AnswerCaptcha(Guid guid, string answer)
+        {
+            try
+            {
+                VerificationCertificate verificationCertificate = await this.session.RequestManager.SendAnswerCaptchaReuqest(guid, answer);
+            }
+        }
+
         private Bitmap Base64ToBitmap(string base64string)
         {
             byte[] bytes = Convert.FromBase64String(base64string);

@@ -6,7 +6,7 @@ namespace Login.Server.Services
     {
         private readonly ICaptchaService captchaImageService;
         private readonly Dictionary<Guid, string> captchaAnswers = new Dictionary<Guid, string>();
-        private readonly HashSet<Guid> verificationTokens = new HashSet<Guid>();
+        private readonly HashSet<VerificationCertificate> verificationTokens = new HashSet<VerificationCertificate>();
 
         public HumanVerificationService(ICaptchaService captchaService)
         {
@@ -25,19 +25,19 @@ namespace Login.Server.Services
             return captcha;
         }
 
-        public bool TrySubmitAnswer(CaptchaAnswer answer, out Guid verificationToken)
+        public bool TrySubmitAnswer(CaptchaAnswer answer, out VerificationCertificate verificationToken)
         {
             if (this.captchaAnswers[answer.Guid] != answer.Answer)
             {
-                verificationToken = Guid.Empty;
+                verificationToken = VerificationCertificate.Empty;
                 return false;
             }
-            verificationToken = Guid.NewGuid();
+            verificationToken = VerificationCertificate.NewVeriricationToken();
             this.verificationTokens.Add(verificationToken);
             return true;
         }
 
-        public bool TryVerifying(Guid verificationToken)
+        public bool TryVerifying(VerificationCertificate verificationToken)
         {
             if (!this.verificationTokens.Contains(verificationToken))
             {

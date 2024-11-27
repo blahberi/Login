@@ -97,6 +97,19 @@ namespace Login.Client
 			}
 		}
 
+		public async Task<Result<VerificationCertificate>> TryAnswerCaptcha()
+		{
+			try
+			{
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return Result<VerificationCertificate>.FailureResult("Human verification has failed");
+			}
+		}
+
 		public async Task<bool> TryRegister(
 			string username, 
 			string password, 

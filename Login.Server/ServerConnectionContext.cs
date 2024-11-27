@@ -14,16 +14,9 @@ namespace Login.Server
 
 		public User User { get; set; }
 
-		public event Action GameInviteCancelled;
-
 		override public void Dispose()
 		{
 			this.SignoutUser();
-		}
-
-		public void CancelGameInvite()
-		{
-			GameInviteCancelled?.Invoke();
 		}
 
 		public void SignoutUser()

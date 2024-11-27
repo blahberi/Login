@@ -4,7 +4,6 @@ using Login.Shared.DTOs.Captcha;
 using Login.Shared.Framework;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Drawing.Printing;
 using System.Net;
 
 namespace Login.Server.Controllers
@@ -40,7 +39,7 @@ namespace Login.Server.Controllers
         private Response SubmitAnswer(Message message)
         {
             CaptchaAnswer answer = this.GetRequestBody<CaptchaAnswer>(message);
-            bool result = this.GetService<IHumanVerificationService>().TrySubmitAnswer(answer, out Guid verificationToken);
+            bool result = this.GetService<IHumanVerificationService>().TrySubmitAnswer(answer, out VerificationCertificate verificationToken);
 
             if (result == false)
             {

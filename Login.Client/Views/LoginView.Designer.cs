@@ -20,127 +20,148 @@
 			base.Dispose(disposing);
 		}
 
-		#region Component Designer generated code
+        #region Component Designer generated code
 
-		/// <summary> 
-		/// Required method for Designer support - do not modify 
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.RegisterLabel = new GruvboxLink();
-            this.PasswordText = new GruvboxTextBox();
-            this.PasswordLabel = new GruvboxLabel();
-            this.UserNameText = new GruvboxTextBox();
-            this.UserNameLabel = new GruvboxLabel();
-            this.LoginButton = new GruvboxButton();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panel1 = new Panel();
+            RegisterLabel = new GruvboxLink();
+            PasswordText = new GruvboxTextBox();
+            PasswordLabel = new GruvboxLabel();
+            UserNameText = new GruvboxTextBox();
+            UserNameLabel = new GruvboxLabel();
+            LoginButton = new GruvboxButton();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.RegisterLabel);
-            this.panel1.Controls.Add(this.PasswordText);
-            this.panel1.Controls.Add(this.PasswordLabel);
-            this.panel1.Controls.Add(this.UserNameText);
-            this.panel1.Controls.Add(this.UserNameLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 105);
-            this.panel1.TabIndex = 0;
+            panel1.AutoSize = true;
+            panel1.Controls.Add(RegisterLabel);
+            panel1.Controls.Add(PasswordText);
+            panel1.Controls.Add(PasswordLabel);
+            panel1.Controls.Add(UserNameText);
+            panel1.Controls.Add(UserNameLabel);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(400, 126);
+            panel1.TabIndex = 0;
             // 
             // RegisterLabel
             // 
-            this.RegisterLabel.AutoSize = true;
-            this.RegisterLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RegisterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.RegisterLabel.Location = new System.Drawing.Point(0, 88);
-            this.RegisterLabel.Name = "RegisterLabel";
-            this.RegisterLabel.Size = new System.Drawing.Size(158, 17);
-            this.RegisterLabel.TabIndex = 4;
-            this.RegisterLabel.TabStop = true;
-            this.RegisterLabel.Text = "Don\'t have an account?";
-            this.RegisterLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RegisterLabel_LinkClicked);
+            RegisterLabel.ActiveLinkColor = Color.FromArgb(211, 134, 155);
+            RegisterLabel.AutoSize = true;
+            RegisterLabel.Dock = DockStyle.Bottom;
+            RegisterLabel.Font = new Font("Microsoft Sans Serif", 10F);
+            RegisterLabel.LinkColor = Color.FromArgb(131, 165, 152);
+            RegisterLabel.Location = new Point(0, 106);
+            RegisterLabel.Margin = new Padding(4, 0, 4, 0);
+            RegisterLabel.Name = "RegisterLabel";
+            RegisterLabel.Size = new Size(185, 20);
+            RegisterLabel.TabIndex = 4;
+            RegisterLabel.TabStop = true;
+            RegisterLabel.Text = "Don't have an account?";
+            RegisterLabel.LinkClicked += RegisterLabel_LinkClicked;
             // 
             // PasswordText
             // 
-            this.PasswordText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PasswordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.PasswordText.Location = new System.Drawing.Point(0, 64);
-            this.PasswordText.Name = "PasswordText";
-            this.PasswordText.Size = new System.Drawing.Size(300, 24);
-            this.PasswordText.TabIndex = 3;
-            this.PasswordText.UseSystemPasswordChar = true;
+            PasswordText.BackColor = Color.FromArgb(235, 219, 178);
+            PasswordText.BorderStyle = BorderStyle.FixedSingle;
+            PasswordText.Dock = DockStyle.Top;
+            PasswordText.Font = new Font("Microsoft Sans Serif", 11F);
+            PasswordText.ForeColor = Color.FromArgb(40, 40, 40);
+            PasswordText.Location = new Point(0, 78);
+            PasswordText.Margin = new Padding(4, 5, 4, 5);
+            PasswordText.Name = "PasswordText";
+            PasswordText.Size = new Size(400, 28);
+            PasswordText.TabIndex = 3;
+            PasswordText.UseSystemPasswordChar = true;
             // 
             // PasswordLabel
             // 
-            this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.PasswordLabel.Location = new System.Drawing.Point(0, 44);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(78, 20);
-            this.PasswordLabel.TabIndex = 2;
-            this.PasswordLabel.Text = "Password";
+            PasswordLabel.AutoSize = true;
+            PasswordLabel.Dock = DockStyle.Top;
+            PasswordLabel.Font = new Font("Microsoft Sans Serif", 12F);
+            PasswordLabel.ForeColor = Color.FromArgb(251, 241, 199);
+            PasswordLabel.Location = new Point(0, 53);
+            PasswordLabel.Margin = new Padding(4, 0, 4, 0);
+            PasswordLabel.Name = "PasswordLabel";
+            PasswordLabel.Size = new Size(98, 25);
+            PasswordLabel.TabIndex = 2;
+            PasswordLabel.Text = "Password";
             // 
             // UserNameText
             // 
-            this.UserNameText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.UserNameText.Location = new System.Drawing.Point(0, 20);
-            this.UserNameText.Name = "UserNameText";
-            this.UserNameText.Size = new System.Drawing.Size(300, 24);
-            this.UserNameText.TabIndex = 1;
+            UserNameText.BackColor = Color.FromArgb(235, 219, 178);
+            UserNameText.BorderStyle = BorderStyle.FixedSingle;
+            UserNameText.Dock = DockStyle.Top;
+            UserNameText.Font = new Font("Microsoft Sans Serif", 11F);
+            UserNameText.ForeColor = Color.FromArgb(40, 40, 40);
+            UserNameText.Location = new Point(0, 25);
+            UserNameText.Margin = new Padding(4, 5, 4, 5);
+            UserNameText.Name = "UserNameText";
+            UserNameText.Size = new Size(400, 28);
+            UserNameText.TabIndex = 1;
             // 
             // UserNameLabel
             // 
-            this.UserNameLabel.AutoSize = true;
-            this.UserNameLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.UserNameLabel.Location = new System.Drawing.Point(0, 0);
-            this.UserNameLabel.Name = "UserNameLabel";
-            this.UserNameLabel.Size = new System.Drawing.Size(83, 20);
-            this.UserNameLabel.TabIndex = 0;
-            this.UserNameLabel.Text = "Username";
+            UserNameLabel.AutoSize = true;
+            UserNameLabel.Dock = DockStyle.Top;
+            UserNameLabel.Font = new Font("Microsoft Sans Serif", 12F);
+            UserNameLabel.ForeColor = Color.FromArgb(251, 241, 199);
+            UserNameLabel.Location = new Point(0, 0);
+            UserNameLabel.Margin = new Padding(4, 0, 4, 0);
+            UserNameLabel.Name = "UserNameLabel";
+            UserNameLabel.Size = new Size(102, 25);
+            UserNameLabel.TabIndex = 0;
+            UserNameLabel.Text = "Username";
             // 
             // LoginButton
             // 
-            this.LoginButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LoginButton.Location = new System.Drawing.Point(0, 115);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(300, 35);
-            this.LoginButton.TabIndex = 1;
-            this.LoginButton.Text = "Log In";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            LoginButton.BackColor = Color.FromArgb(211, 134, 155);
+            LoginButton.Dock = DockStyle.Bottom;
+            LoginButton.FlatStyle = FlatStyle.Flat;
+            LoginButton.Font = new Font("Microsoft Sans Serif", 12F);
+            LoginButton.ForeColor = Color.FromArgb(40, 40, 40);
+            LoginButton.Location = new Point(0, 177);
+            LoginButton.Margin = new Padding(4, 5, 4, 5);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(400, 54);
+            LoginButton.TabIndex = 1;
+            LoginButton.Text = "Log In";
+            LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += LoginButton_Click;
             // 
             // LoginView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.LoginButton);
-            this.Name = "LoginView";
-            this.Size = new System.Drawing.Size(300, 150);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(40, 40, 40);
+            Controls.Add(panel1);
+            Controls.Add(LoginButton);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "LoginView";
+            Size = new Size(400, 231);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
-		}
+        #endregion
 
-		#endregion
-
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox PasswordText;
-		private System.Windows.Forms.Label PasswordLabel;
-		private System.Windows.Forms.TextBox UserNameText;
-		private System.Windows.Forms.Label UserNameLabel;
-		private System.Windows.Forms.Button LoginButton;
-		private System.Windows.Forms.LinkLabel RegisterLabel;
-	}
+        private System.Windows.Forms.Panel panel1;
+        private GruvboxTextBox PasswordText;
+        private GruvboxLabel PasswordLabel;
+        private GruvboxTextBox UserNameText;
+        private GruvboxLabel UserNameLabel;
+        private GruvboxButton LoginButton;
+        private GruvboxLink RegisterLabel;
+    }
 }

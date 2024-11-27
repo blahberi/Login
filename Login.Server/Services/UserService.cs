@@ -18,7 +18,7 @@ namespace Login.Server.Services
             this.humanVerificationService = humanVerificationService;
             this.dataAccess = dataAccess;
 			this.signedInUsers = new Dictionary<string, ServerConnectionContext>();
-		}//
+		}
 
 		public async Task<Result> RegisterUser(UserRegistration userRegistration)
 		{
@@ -62,12 +62,6 @@ namespace Login.Server.Services
 			}
 		}
 
-		/// <summary>
-		/// Signs in a user.
-		/// </summary>
-		/// <param name="connectionContext"></param>
-		/// <param name="userSignin"></param>
-		/// <returns></returns>
 		public async Task<Result<User>> SigninUser(ServerConnectionContext connectionContext, UserSignin userSignin)
 		{
 			User user = await this.dataAccess.UserRepository.GetUserAsync(userSignin.Username);
@@ -101,11 +95,6 @@ namespace Login.Server.Services
 			return Result<User>.SuccessResult(user);
 		}
 
-		/// <summary>
-		/// Checks if a username already exists in the database.
-		/// </summary>
-		/// <param name="username"></param>
-		/// <returns></returns>
 		private async Task<bool> UserExists(string username)
 		{
 			User user = await this.dataAccess.UserRepository.GetUserAsync(username);
@@ -117,10 +106,6 @@ namespace Login.Server.Services
 			return true;
 		}
 
-		/// <summary>
-		/// Signs out a user.
-		/// </summary>
-		/// <param name="user"></param>
 		public void SignoutUser(User user)
 		{
 			lock (this.signedInUsers)
@@ -129,27 +114,15 @@ namespace Login.Server.Services
 			}
 		}
 
-		/// <summary>
-		/// Gets the user connection context for a signed in user.
-		/// If the user is not signed in, the function returns false.
-		/// </summary>
-		/// <param name="username"></param>
-		/// <param name="userConnectionContext"></param>
-		/// <returns></returns>
 		public bool TryGetSignedinUserConnectionContext(string username, out ServerConnectionContext userConnectionContext)
 		{
 			return this.signedInUsers.TryGetValue(username, out userConnectionContext);
 		}
 
-		/// <summary>
-		/// Salts and hashes a passsword
-		/// </summary>
-		/// <param name="password"></param>
-		/// <returns>The hashed salted password and the salt used</returns>
 		private static (string, string) HashPassword(string password)
 		{
 			byte[] saltBytes = new byte[16];
-			using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+			using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
 			{
 				rng.GetBytes(saltBytes);
 			}
@@ -158,12 +131,6 @@ namespace Login.Server.Services
 			return (hash, saltText);
 		}
 
-		/// <summary>
-		/// Compute the hash given a password and a salt
-		/// </summary>
-		/// <param name="password"></param>
-		/// <param name="salt"></param>
-		/// <returns>the hashed salted password</returns>
 		private static string ComputeHash(string password, string salt)
 		{
 			using (SHA256 sha256 = SHA256.Create())

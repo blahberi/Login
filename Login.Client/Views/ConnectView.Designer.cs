@@ -44,7 +44,7 @@
             IPLabel.Font = new Font("Microsoft Sans Serif", 12F);
             IPLabel.ForeColor = Color.FromArgb(251, 241, 199);
             IPLabel.Location = new Point(0, 0);
-            IPLabel.Margin = new Padding(4, 0, 4, 0);
+            IPLabel.Margin = new Padding(5, 0, 5, 0);
             IPLabel.Name = "IPLabel";
             IPLabel.Size = new Size(30, 25);
             IPLabel.TabIndex = 0;
@@ -58,7 +58,7 @@
             IPText.Font = new Font("Microsoft Sans Serif", 12F);
             IPText.ForeColor = Color.FromArgb(40, 40, 40);
             IPText.Location = new Point(0, 25);
-            IPText.Margin = new Padding(4, 5, 4, 5);
+            IPText.Margin = new Padding(5);
             IPText.Name = "IPText";
             IPText.Size = new Size(400, 30);
             IPText.TabIndex = 1;
@@ -71,7 +71,7 @@
             PortText.Font = new Font("Microsoft Sans Serif", 12F);
             PortText.ForeColor = Color.FromArgb(40, 40, 40);
             PortText.Location = new Point(0, 80);
-            PortText.Margin = new Padding(4, 5, 4, 5);
+            PortText.Margin = new Padding(5);
             PortText.Name = "PortText";
             PortText.Size = new Size(400, 30);
             PortText.TabIndex = 4;
@@ -83,7 +83,7 @@
             PortLabel.Font = new Font("Microsoft Sans Serif", 12F);
             PortLabel.ForeColor = Color.FromArgb(251, 241, 199);
             PortLabel.Location = new Point(0, 55);
-            PortLabel.Margin = new Padding(4, 0, 4, 0);
+            PortLabel.Margin = new Padding(5, 0, 5, 0);
             PortLabel.Name = "PortLabel";
             PortLabel.Size = new Size(47, 25);
             PortLabel.TabIndex = 3;
@@ -96,10 +96,10 @@
             ConnectButton.FlatStyle = FlatStyle.Flat;
             ConnectButton.Font = new Font("Microsoft Sans Serif", 11F);
             ConnectButton.ForeColor = Color.FromArgb(40, 40, 40);
-            ConnectButton.Location = new Point(0, 157);
-            ConnectButton.Margin = new Padding(4, 5, 4, 5);
+            ConnectButton.Location = new Point(0, 158);
+            ConnectButton.Margin = new Padding(5);
             ConnectButton.Name = "ConnectButton";
-            ConnectButton.Size = new Size(400, 46);
+            ConnectButton.Size = new Size(400, 45);
             ConnectButton.TabIndex = 5;
             ConnectButton.Text = "Connect";
             ConnectButton.UseVisualStyleBackColor = true;
@@ -115,7 +115,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(13, 15, 13, 15);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 142);
+            panel1.Size = new Size(400, 141);
             panel1.TabIndex = 6;
             // 
             // ConnectView
@@ -125,7 +125,7 @@
             BackColor = Color.FromArgb(40, 40, 40);
             Controls.Add(panel1);
             Controls.Add(ConnectButton);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(5);
             Name = "ConnectView";
             Size = new Size(400, 203);
             Load += ConnectControl_Load;

@@ -30,5 +30,13 @@ namespace Login.Client.Components
             this.captchaPictureBox.Image = this.Captcha.Bitmap;
             this.CaptchaLoaded = true;
         }
+
+        private void verifyButton_Click(object sender, EventArgs e)
+        {
+            if (this.answerTextbox.Text != String.Empty) 
+            {
+                this.uiManager.TryAnswerCaptcha();
+            }
+        }
     }
 }

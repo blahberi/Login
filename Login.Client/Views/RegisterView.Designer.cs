@@ -110,7 +110,6 @@ namespace Login.Client.Views
             // 
             // panel1
             // 
-            panel1.AutoSize = true;
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(GenderCombo);
             panel1.Controls.Add(GenderLabel);
@@ -132,13 +131,13 @@ namespace Login.Client.Views
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 536);
+            panel1.Size = new Size(400, 561);
             panel1.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 386);
+            panel3.Location = new Point(0, 411);
             panel3.Name = "panel3";
             panel3.Size = new Size(400, 150);
             panel3.TabIndex = 5;
@@ -339,7 +338,7 @@ namespace Login.Client.Views
             panel2.Controls.Add(LoginLink);
             panel2.Controls.Add(RegisterButton);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 591);
+            panel2.Location = new Point(0, 566);
             panel2.Name = "panel2";
             panel2.Size = new Size(400, 109);
             panel2.TabIndex = 4;
@@ -353,13 +352,12 @@ namespace Login.Client.Views
             Controls.Add(panel1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "RegisterView";
-            Size = new Size(400, 700);
+            Size = new Size(400, 675);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

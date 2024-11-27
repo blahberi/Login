@@ -35,6 +35,14 @@ namespace Login.Shared
 			return connectionContext.RequestManager.SendGetCaptchaRequest();
 		}
 
+		public static Task<VerificationCertificate> SendAnswerCaptchaRequest(
+			this ConnectionContext connectionContext,
+			Guid guid,
+			string answer)
+		{
+			return connectionContext.RequestManager.SendAnswerCaptchaRequest(guid, asnwer);
+		}
+
 		public static Task SendUserSignin(
 			this ConnectionContext connectionContext,
 			string userName,
@@ -78,6 +86,18 @@ namespace Login.Shared
 			this IRequestManager requestManager)
 		{
 			return requestManager.SendRequest<TransferableCaptcha>(Paths.HumanVerification, Methods.Captcha.GetCaptcha);
+		}
+
+		public static Task<VerificationCertificate> SendAnswerCaptchaRequest(
+			this IRequestManager requestManager,
+			Guid guid,
+			string answer)
+		{
+			return requestManager.SendRequest<VerificationCertificate>(Paths.HumanVerification, Methods.Captcha.SubmitAnswer, new CaptchaAnswer
+			{
+				Guid = guid,
+				Answer = answer
+			});
 		}
 
 		public static Task SendUserSignin(
