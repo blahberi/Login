@@ -7,6 +7,7 @@ namespace Login.Server.Services
         private readonly ICaptchaService captchaImageService;
         private readonly Dictionary<Guid, string> captchaAnswers = new Dictionary<Guid, string>();
         private readonly HashSet<VerificationCertificate> verificationTokens = new HashSet<VerificationCertificate>();
+        private readonly object lockObject = new object();
 
         public HumanVerificationService(ICaptchaService captchaService)
         {
@@ -21,29 +22,41 @@ namespace Login.Server.Services
                 Guid = Guid.NewGuid(),
                 Bitmap = this.captchaImageService.GenerateCaptchaImage(text)
             };
-            this.captchaAnswers.Add(captcha.Guid, text);
+            lock (this.lockObject)
+            {
+                this.captchaAnswers.Add(captcha.Guid, text);
+            }
             return captcha;
         }
 
         public bool TrySubmitAnswer(CaptchaAnswer answer, out VerificationCertificate verificationToken)
         {
-            if (this.captchaAnswers[answer.Guid] != answer.Answer)
+            lock (this.lockObject)
             {
-                verificationToken = VerificationCertificate.Empty;
-                return false;
+                if (this.captchaAnswers[answer.Guid] != answer.Answer)
+                {
+                    verificationToken = VerificationCertificate.Empty;
+                    return false;
+                }
             }
             verificationToken = VerificationCertificate.NewVeriricationToken();
-            this.verificationTokens.Add(verificationToken);
+            lock (this.lockObject)
+            {
+                this.verificationTokens.Add(verificationToken);
+            }
             return true;
         }
 
         public bool TryVerifying(VerificationCertificate verificationToken)
         {
-            if (!this.verificationTokens.Contains(verificationToken))
+            lock (this.lockObject)
             {
-                return false;
+                if (!this.verificationTokens.Contains(verificationToken))
+                {
+                    return false;
+                }
+                this.verificationTokens.Remove(verificationToken);
             }
-            this.verificationTokens.Remove(verificationToken);
             return true;
         }
     }
