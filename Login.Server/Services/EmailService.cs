@@ -10,7 +10,6 @@ namespace Login.Server.Services
         private readonly int smtpPort;
         private readonly string senderAddress;
         private readonly string senderPassword;
-
         public EmailService()
         {
             this.smtpHost = ConfigurationManager.AppSettings["SMTPServer"];
