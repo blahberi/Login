@@ -12,7 +12,8 @@ namespace Login.Server.Services
 				.AddSingleton<IDataAccess, SqlDataAccess>()
 				.AddSingleton<ICaptchaService, CaptchaService>()
 				.AddSingleton<IHumanVerificationService, HumanVerificationService>()
-				.AddSingleton<IUserService, UserService>();
+				.AddSingleton<IUserService, UserService>()
+				.AddSingleton<IEmailService, EmailService>();
 
 			return builder;
 		}

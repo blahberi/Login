@@ -7,7 +7,7 @@ using Login.Shared.Framework;
 
 namespace Login.Client
 {
-    internal class UIManager : IUIManager
+    internal class UIManager
     {
         private readonly IProtocolManager protocolManager;
         private readonly IProviderOfServices serviceProvider;
@@ -22,7 +22,6 @@ namespace Login.Client
 
             this.serviceProvider = new ServiceProviderBuilder()
                 .RegisterServices()
-                .RegisterSingleton<IUIManager, UIManager>()
                 .Build();
         }
 
